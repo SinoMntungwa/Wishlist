@@ -1,173 +1,218 @@
 <!DOCTYPE html>
-<html lang="eng">
-    <head>
-        <meta charset="UTF-8"/>
-        <meta name="viepoint" content="width=device-width, initial-scale=1"/>
-        <title>20th Birthday Wishlist For Her</title>
-        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Great+Vibes&display=swap" rel="stylesheet">
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>20th Birthday Wishlist For Her</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Great+Vibes&display=swap" rel="stylesheet" />
 
-        <style>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background: linear-gradient(135deg, #ffe4ec, #ffd6e8);
+            font-family: 'Segoe UI', sans-serif;
+            color: #333;
+            text-align: center;
+            padding: 1rem;
+            font-size: 16px;
+        }
 
-            * {
-                margin: 0;
-                padding: 0;
-                box-sizing: border-box;
+        h1 {
+            font-size: 2.8em;
+            color: #d14b72;
+            margin-bottom: 2.5rem;
+            text-shadow: 2px 2px 5px rgba(225, 192, 203, 0.6);
+        }
+
+        .wishlist {
+            list-style: none;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+            padding: 0;
+        }
+
+        .wishlist li {
+            background: #fff;
+            border: 2px solid #ff9fba;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
+            padding: 1rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-radius: 12px;
+        }
+
+        .wishlist li:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 8px 20px rgba(255, 159, 186, 0.65);
+        }
+
+        .wishlist img {
+            width: 110px;
+            height: 110px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 0.7rem;
+            border: 3px solid #ff9fba;
+        }
+
+        .wishlist span {
+            display: block;
+            font-size: 1.1rem;
+            color: #444;
+            font-weight: 500;   
+        }
+
+        .footer {
+            font-size: 1rem;
+            color: #888;
+            margin-top: 1rem;
+        }
+
+
+        /* Confetti */
+        .confetti {
+            position: fixed;
+            top: -10px;
+            border-radius: 50%;
+            opacity: 0.8;
+            z-index: 9999;
+            pointer-events: none;
+            animation: fall 5s linear infinite;
+        }
+
+        @keyframes fall {
+            0% {
+                transform: translateY(0) rotate(0deg);
+                opacity: 0.8;
             }
+            100% {
+                transform: translateY(110vh) rotate(360deg);
+                opacity: 0.3;
+            }
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 700px) {
+            .wishlist {
+                grid-template-columns: 1fr;
+                gap: 1.2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
             body {
-                background: linear-gradient(135deg, #ffe4ec, #ffd6e8);
-                font-family: 'Segoe UI', sans-serif;
-                color: #333;
-                text-align: center;
-                padding: 1rem;
+                padding: 0.5rem;
+                font-size: 14px;
             }
 
             h1 {
-                font-size: 2.8em;
-                color: #d14b72;
-                margin-bottom: 2.5rem;
-                text-shadow: 2px 2px 5px rgba(225, 192, 203, 0.6);
-            }
-
-            .wishlist {
-                list-style: none;
-                display: grid;
-                grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-                gap: 1.5rem;
+                font-size: 2rem;
                 margin-bottom: 1.5rem;
-                padding: 0
             }
 
             .wishlist li {
-                background: #fff;
-                border: 2px solid #ff9fba;
-                box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08); /* Fixed typo */
-                padding: 1rem;
-                transition: transform 0.3s ease, box-shadow 0.3s ease;
-            }
-
-            .wishlist li:hover {
-                transform: translateY(-8px);
-                box-shadow: 0 8px 20px rgba(255, 159, 186, 0.65);
+                padding: 0.8rem;
             }
 
             .wishlist img {
-                width: 110px;
-                height: 110px;
-                border-radius: 50%;
-                object-fit: cover;
-                margin-bottom: 0.7rem;
-                border: 3px solid #ff9fba;
+                width: 80px;
+                height: 80px;
+                margin-bottom: 0.5rem;
             }
 
             .wishlist span {
-                display: block;
-                font-size: 1.1rem;
-                color: #444;
-                font-weight: 500;   
-            }
-
-            .footer {
                 font-size: 1rem;
-                color: #888;
-                margin-top: 1rem;
             }
 
-            @media (max-width: 700px) {
-                .wishlist {
-                    grid-template-columns: 1fr;
-                    gap: 22px;
-                }
-            }
-
+            /* Smaller confetti on small screens */
             .confetti {
-                position: fixed;
-                top: -10px;
-                border-radius: 50%;
-                opacity: 0.8;
-                z-index: 9999;
-                pointer-events: none;
-                animation: fall 5s linear infinite;
+                width: 6px !important;
+                height: 6px !important;
             }
+        }
 
-            @keyframes fall {
-                0% {
-                    transform: translateY(0) rotate(0deg);
-                    opacity: 0.8;
-                }
-                100% {
-                    transform: translateY(110vh) rotate(360deg);
-                    opacity: 0.3;
-                }
+        @media (max-width: 400px) {
+            .wishlist img {
+                width: 60px;
+                height: 60px;
             }
+        }
+    </style>
+</head>
+<body>
 
-        </style>
-    </head>
-    <body>
+    <script>
+        const colors = ["#FFB6C1", "#FFC0CB", "#FF69B4", "#FF1493", "#DB7093"];
+        const numParticles = 60;
 
-        <script>
-            const colors =["#FFB6C1", "#FFC0CB", "#FF69B4", "#FF1493", "#DB7093"];
-            const numParticles = 60;
+        for (let i = 0; i < numParticles; i++) {
+            const particle = document.createElement("div");
+            particle.classList.add("confetti");
+            particle.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+            particle.style.left = Math.random() * 100 + "vw";
+            particle.style.animationDelay = Math.random() * 3 + "s";
+            const size = Math.random() * 8 + 6;
+            particle.style.width = size + "px";
+            particle.style.height = size + "px";
+            document.body.appendChild(particle);
+        }
+    </script>
 
-            for (let i = 0; i < numParticles; i++) {
-                const particle = document.createElement("div");
-                particle.classList.add("confetti");
-                particle.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
-                particle.style.left = Math.random() * 100 + "vw";
-                particle.style.animationDelay = Math.random() * 3 + "s";
-                particle.style.width = particle.style.height = Math.random() * 8 + 6 + "px";
-                document.body.appendChild(particle);   // Append to body!
-            }
-
-            </script>
-
-        <h1>20th Birthday Wishlist For Her</h1>
-        <ul class="wishlist">
-                <li>
-                <img src="Birthday Cake.jfif" alt="Cake"/>
-                <span>Personalized Vanilla Cake</span>
-                </li>
-            <li>
-                <img src="20th Birthday Decorations.jfif" alt="Balloons"/>
-                <span>Rose Gold Balloons</span>
-            </li>
-            <li>
-                <img src="nails.jfif" alt="Nails"/>
-                <span>Manicure & Pedicure</span>
-            </li>
-            <li>
-                <img src="flowers.jfif" alt="Flowers"/>
-                <span>White Roses</span>
+    <h1>20th Birthday Wishlist For Her</h1>
+    
+    <ul class="wishlist">
+        <li>
+            <img src="Birthday Cake.jfif" alt="Cake"/>
+            <span>Personalized Vanilla Cake</span>
         </li>
         <li>
-                <img src="water park.jfif" alt="Adventure"/>
-                <span>Water Park</span>
+            <img src="20th Birthday Decorations.jfif" alt="Balloons"/>
+            <span>Rose Gold Balloons</span>
         </li>
-            <li>
-                <img src="Perfume.jfif" alt="Perfume"/>
-                <span>Lattafa Perfume</span>
-            </li>
-            <li>
-                <img src="van cleef pearly white jewlery set.jfif" alt="jewlery"/>
-                <span>jewlery</span>
-            </li>
-            <li>
-                <img src="Short boho braids.jfif" alt="Hair"/>
-                <span>Goddess Braids</span>
-            </li>
-            <li>
-                <img src="tote bag.jfif" alt="Bag"/>
-                <span>Hand Bag</span>
-            </li>
-            <li>
-                <img src="lashes.jfif" alt="Lashes"/>
-                <span>Classic Lashes</span>
-            </li>
-            <li>
-                <img src="" alt="Bottle"/>
-                <span>Stanley Dupe</span>
-            </li>
-        </ul>
+        <li>
+            <img src="nails.jfif" alt="Nails"/>
+            <span>Manicure & Pedicure</span>
+        </li>
+        <li>
+            <img src="flowers.jfif" alt="Flowers"/>
+            <span>White Roses</span>
+        </li>
+        <li>
+            <img src="water park.jfif" alt="Adventure"/>
+            <span>Water Park</span>
+        </li>
+        <li>
+            <img src="Perfume.jfif" alt="Perfume"/>
+            <span>Lattafa Perfume</span>
+        </li>
+        <li>
+            <img src="van cleef pearly white jewlery set.jfif" alt="jewlery"/>
+            <span>Jewellery</span>
+        </li>
+        <li>
+            <img src="Short boho braids.jfif" alt="Hair"/>
+            <span>Goddess Braids</span>
+        </li>
+        <li>
+            <img src="tote bag.jfif" alt="Bag"/>
+            <span>Hand Bag</span>
+        </li>
+        <li>
+            <img src="lashes.jfif" alt="Lashes"/>
+            <span>Classic Lashes</span>
+        </li>
+        <li>
+            <img src="" alt="Bottle"/>
+            <span>Stanley Dupe</span>
+        </li>
+    </ul>
 
-        <p class="footer">A curated list to make her 20th birthday unforgettable!</p>
-    </body>
+    <p class="footer">A curated list to make her 20th birthday unforgettable!</p>
+
+</body>
 </html>
