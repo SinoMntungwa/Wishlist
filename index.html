@@ -1,218 +1,411 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>20th Birthday Wishlist For Her</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Great+Vibes&display=swap" rel="stylesheet" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>20th Birthday Wishlist For Her</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Great+Vibes&display=swap" rel="stylesheet" />
+  <style>
+    /* Reset and base */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      background: linear-gradient(135deg, #ffe4ec, #ffd6e8);
+      font-family: 'Segoe UI', sans-serif;
+      color: #333;
+      text-align: center;
+      padding: 1rem;
+      font-size: 16px;
+    }
 
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        body {
-            background: linear-gradient(135deg, #ffe4ec, #ffd6e8);
-            font-family: 'Segoe UI', sans-serif;
-            color: #333;
-            text-align: center;
-            padding: 1rem;
-            font-size: 16px;
-        }
+    h1 {
+      font-size: 2.8em;
+      color: #d14b72;
+      margin-bottom: 2.5rem;
+      text-shadow: 2px 2px 5px rgba(225, 192, 203, 0.6);
+      font-family: 'Montserrat', sans-serif;
+    }
 
-        h1 {
-            font-size: 2.8em;
-            color: #d14b72;
-            margin-bottom: 2.5rem;
-            text-shadow: 2px 2px 5px rgba(225, 192, 203, 0.6);
-        }
+    /* Wishlist styling */
+    .wishlist {
+      list-style: none;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+      padding: 0;
+    }
 
-        .wishlist {
-            list-style: none;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 1.5rem;
-            margin-bottom: 1.5rem;
-            padding: 0;
-        }
+    .wishlist li {
+      background: #fff;
+      border: 2px solid #ff9fba;
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
+      padding: 1rem;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      border-radius: 12px;
+      user-select: none;
+    }
 
-        .wishlist li {
-            background: #fff;
-            border: 2px solid #ff9fba;
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
-            padding: 1rem;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            border-radius: 12px;
-        }
+    .wishlist li:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 8px 20px rgba(255, 159, 186, 0.65);
+    }
 
-        .wishlist li:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 8px 20px rgba(255, 159, 186, 0.65);
-        }
+    .wishlist img {
+      width: 110px;
+      height: 110px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 0.7rem;
+      border: 3px solid #ff9fba;
+      user-select: none;
+    }
 
-        .wishlist img {
-            width: 110px;
-            height: 110px;
-            border-radius: 50%;
-            object-fit: cover;
-            margin-bottom: 0.7rem;
-            border: 3px solid #ff9fba;
-        }
+    .wishlist span {
+      display: block;
+      font-size: 1.1rem;
+      color: #444;
+      font-weight: 500;   
+      user-select: none;
+    }
 
-        .wishlist span {
-            display: block;
-            font-size: 1.1rem;
-            color: #444;
-            font-weight: 500;   
-        }
+    .footer {
+      font-size: 1rem;
+      color: #888;
+      margin-top: 1rem;
+      margin-bottom: 2rem;
+      user-select: none;
+    }
 
-        .footer {
-            font-size: 1rem;
-            color: #888;
-            margin-top: 1rem;
-        }
+    /* Hide wishlist & footer container initially */
+    #content {
+      display: none;
+    }
+
+    /* Responsive for smaller screens */
+    @media (max-width: 700px) {
+      .wishlist {
+        grid-template-columns: 1fr;
+        gap: 1.2rem;
+      }
+    }
+    @media (max-width: 480px) {
+      body {
+        padding: 0.5rem;
+        font-size: 14px;
+      }
+      h1 {
+        font-size: 2rem;
+        margin-bottom: 1.5rem;
+      }
+      .wishlist li {
+        padding: 0.8rem;
+      }
+      .wishlist img {
+        width: 80px;
+        height: 80px;
+        margin-bottom: 0.5rem;
+      }
+      .wishlist span {
+        font-size: 1rem;
+      }
+    }
+    @media (max-width: 400px) {
+      .wishlist img {
+        width: 60px;
+        height: 60px;
+      }
+    }
 
 
-        /* Confetti */
-        .confetti {
-            position: fixed;
-            top: -10px;
-            border-radius: 50%;
-            opacity: 0.8;
-            z-index: 9999;
-            pointer-events: none;
-            animation: fall 5s linear infinite;
-        }
+    /* Popup overlay */
+    #popupOverlay {
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0,0,0,0.7);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 10000;
+    }
 
-        @keyframes fall {
-            0% {
-                transform: translateY(0) rotate(0deg);
-                opacity: 0.8;
-            }
-            100% {
-                transform: translateY(110vh) rotate(360deg);
-                opacity: 0.3;
-            }
-        }
+    #popupBox {
+      background: white;
+      padding: 2rem 2.5rem;
+      border-radius: 12px;
+      max-width: 400px;
+      width: 90%;
+      text-align: center;
+      box-shadow: 0 0 20px rgba(0,0,0,0.3);
+      font-family: 'Segoe UI', sans-serif;
+      opacity: 0;
+      transform: translateY(30px);
+      animation: popupEnter 0.4s forwards ease-out;
+    }
 
-        /* Responsive Styles */
-        @media (max-width: 700px) {
-            .wishlist {
-                grid-template-columns: 1fr;
-                gap: 1.2rem;
-            }
-        }
+    @keyframes popupEnter {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
 
-        @media (max-width: 480px) {
-            body {
-                padding: 0.5rem;
-                font-size: 14px;
-            }
+    #popupBox h2 {
+      font-size: 1.8rem;
+      margin-bottom: 1.2rem;
+      color: #d14b72;
+      user-select: none;
+    }
 
-            h1 {
-                font-size: 2rem;
-                margin-bottom: 1.5rem;
-            }
+    #popupBox p {
+      font-size: 1.1rem;
+      margin-bottom: 1.8rem;
+      color: #555;
+      user-select: none;
+    }
 
-            .wishlist li {
-                padding: 0.8rem;
-            }
+    #popupButtons button {
+      margin: 0 0.8rem;
+      padding: 0.6rem 1.4rem;
+      border: none;
+      border-radius: 6px;
+      font-size: 1rem;
+      cursor: pointer;
+      font-weight: 600;
+      transition: background-color 0.3s ease, transform 0.15s ease;
+      user-select: none;
+    }
 
-            .wishlist img {
-                width: 80px;
-                height: 80px;
-                margin-bottom: 0.5rem;
-            }
+    #popupButtons button:hover {
+      transform: scale(1.05);
+    }
 
-            .wishlist span {
-                font-size: 1rem;
-            }
+    #popupButtons button:active {
+      transform: scale(0.95);
+    }
 
-            /* Smaller confetti on small screens */
-            .confetti {
-                width: 6px !important;
-                height: 6px !important;
-            }
-        }
+    #popupButtons .primary {
+      background-color: #d14b72;
+      color: white;
+    }
 
-        @media (max-width: 400px) {
-            .wishlist img {
-                width: 60px;
-                height: 60px;
-            }
-        }
-    </style>
+    #popupButtons .primary:hover {
+      background-color: #b43e65;
+    }
+
+    #popupButtons .secondary {
+      background-color: #ccc;
+      color: #444;
+    }
+
+    #popupButtons .secondary:hover {
+      background-color: #aaa;
+    }
+
+    /* Confetti styling */
+    .confetti {
+      position: fixed;
+      top: -10px;
+      border-radius: 50%;
+      opacity: 0.8;
+      z-index: 9999;
+      pointer-events: none;
+      animation: fall 5s linear infinite;
+    }
+
+    @keyframes fall {
+      0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0.8;
+      }
+      100% {
+        transform: translateY(110vh) rotate(360deg);
+        opacity: 0.3;
+      }
+    }
+
+    /* Smaller confetti for mobile */
+    @media (max-width: 480px) {
+      .confetti {
+        width: 6px !important;
+        height: 6px !important;
+      }
+    }
+  </style>
 </head>
 <body>
+  <!-- Popup container -->
+  <div id="popupOverlay">
+    <div id="popupBox">
+      <h2 id="popupTitle">Welcome!</h2>
+      <p id="popupMessage">Welcome to Sino's wishlist</p>
+      <div id="popupButtons"></div>
+    </div>
+  </div>
 
-    <script>
-        const colors = ["#FFB6C1", "#FFC0CB", "#FF69B4", "#FF1493", "#DB7093"];
-        const numParticles = 60;
-
-        for (let i = 0; i < numParticles; i++) {
-            const particle = document.createElement("div");
-            particle.classList.add("confetti");
-            particle.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
-            particle.style.left = Math.random() * 100 + "vw";
-            particle.style.animationDelay = Math.random() * 3 + "s";
-            const size = Math.random() * 8 + 6;
-            particle.style.width = size + "px";
-            particle.style.height = size + "px";
-            document.body.appendChild(particle);
-        }
-    </script>
-
+  <!-- Wishlist content wrapped in hidden container -->
+  <div id="content">
     <h1>20th Birthday Wishlist For Her</h1>
-    
     <ul class="wishlist">
-        <li>
-            <img src="Birthday Cake.jfif" alt="Cake"/>
-            <span>Personalized Vanilla Cake</span>
-        </li>
-        <li>
-            <img src="20th Birthday Decorations.jfif" alt="Balloons"/>
-            <span>Rose Gold Balloons</span>
-        </li>
-        <li>
-            <img src="nails.jfif" alt="Nails"/>
-            <span>Manicure & Pedicure</span>
-        </li>
-        <li>
-            <img src="flowers.jfif" alt="Flowers"/>
-            <span>White Roses</span>
-        </li>
-        <li>
-            <img src="water park.jfif" alt="Adventure"/>
-            <span>Water Park</span>
-        </li>
-        <li>
-            <img src="Perfume.jfif" alt="Perfume"/>
-            <span>Lattafa Perfume</span>
-        </li>
-        <li>
-            <img src="van cleef pearly white jewlery set.jfif" alt="jewlery"/>
-            <span>Jewellery</span>
-        </li>
-        <li>
-            <img src="Short boho braids.jfif" alt="Hair"/>
-            <span>Goddess Braids</span>
-        </li>
-        <li>
-            <img src="tote bag.jfif" alt="Bag"/>
-            <span>Hand Bag</span>
-        </li>
-        <li>
-            <img src="lashes.jfif" alt="Lashes"/>
-            <span>Classic Lashes</span>
-        </li>
-        <li>
-            <img src="" alt="Bottle"/>
-            <span>Stanley Dupe</span>
-        </li>
+      <li><img src="Birthday Cake.jfif" alt="Cake"/><span>Personalized Vanilla Cake</span></li>
+      <li><img src="20th Birthday Decorations.jfif" alt="Balloons"/><span>Rose Gold Balloons</span></li>
+      <li><img src="nails.jfif" alt="Nails"/><span>Manicure & Pedicure</span></li>
+      <li><img src="flowers.jfif" alt="Flowers"/><span>White Roses</span></li>
+      <li><img src="water park.jfif" alt="Adventure"/><span>Water Park</span></li>
+      <li><img src="Perfume.jfif" alt="Perfume"/><span>Lattafa Perfume</span></li>
+      <li><img src="van cleef pearly white jewlery set.jfif" alt="jewlery"/><span>Jewellery</span></li>
+      <li><img src="Short boho braids.jfif" alt="Hair"/><span>Goddess Braids</span></li>
+      <li><img src="tote bag.jfif" alt="Bag"/><span>Hand Bag</span></li>
+      <li><img src="lashes.jfif" alt="Lashes"/><span>Classic Lashes</span></li>
+      <li><img src="rose quartz stanley cup.jfif" alt="Bottle"/><span>Cup</span></li>
+      <li><img src="phone.jfif" alt="Phone"/><span>A New Phone</span></li>
+      <li><img src="love dinner.jfif" alt="Time"/><span>Quality Time With You</span></li>
+      <li><img src="girl dinner.jfif" alt="Time"/><span>Dinner With My Girls</span></li>
     </ul>
 
     <p class="footer">A curated list to make her 20th birthday unforgettable!</p>
+  </div>
 
+  <script>
+    // Popup variables
+    const popupOverlay = document.getElementById('popupOverlay');
+    const popupBox = document.getElementById('popupBox');
+    const popupTitle = document.getElementById('popupTitle');
+    const popupMessage = document.getElementById('popupMessage');
+    const popupButtons = document.getElementById('popupButtons');
+    const content = document.getElementById('content');
+
+    // Steps content data
+    const steps = [
+      {
+        title: "Welcome!",
+        message: "Welcome to My Birthday Wishlist",
+        buttons: [
+          { text: "Next", action: 'next', className: 'primary' }
+        ]
+      },
+      {
+        title: "Warning",
+        message: "The items you may see are kinda expensive, are you sure you would like to view?",
+        buttons: [
+          { text: "Yes", action: 'next', className: 'primary' },
+          { text: "No", action: 'no', className: 'secondary' }
+        ]
+      },
+      {
+        title: "Are you sure?",
+        message: "Are you sure you want to continue?",
+        buttons: [
+          { text: "Yes", action: 'finish', className: 'primary' },
+          { text: "No", action: 'no', className: 'secondary' }
+        ]
+      }
+    ];
+
+    let currentStep = 0;
+
+    function renderStep(stepIndex) {
+      const step = steps[stepIndex];
+      popupTitle.textContent = step.title;
+      popupMessage.textContent = step.message;
+      popupButtons.innerHTML = '';
+
+      // Trigger fade-slide animation
+      popupBox.style.animation = 'none';
+      void popupBox.offsetWidth; // trigger reflow
+      popupBox.style.animation = 'popupEnter 0.4s forwards ease-out';
+
+      step.buttons.forEach(buttonInfo => {
+        const btn = document.createElement('button');
+        btn.textContent = buttonInfo.text;
+        btn.className = buttonInfo.className;
+        btn.addEventListener('click', () => {
+          if(buttonInfo.action === 'next') {
+            currentStep++;
+            if(currentStep < steps.length) {
+              renderStep(currentStep);
+            }
+          }
+          else if(buttonInfo.action === 'finish') {
+            closePopup();
+          }
+          else if(buttonInfo.action === 'no') {
+            showGoodbye();
+          }
+        });
+        popupButtons.appendChild(btn);
+      });
+    }
+
+    function closePopup() {
+      // Animate popup closing with a scale & fade out
+      popupBox.style.animation = 'popupExit 0.4s forwards ease-in';
+      popupBox.addEventListener('animationend', () => {
+        popupOverlay.style.display = 'none';
+        // Reveal the wishlist and start confetti
+        content.style.display = 'block';
+        initializeConfetti();
+      }, { once: true });
+    }
+
+    function showGoodbye() {
+      popupTitle.textContent = "Alright!";
+      popupMessage.textContent = "Feel free to come back later if you change your mind.";
+      popupButtons.innerHTML = '';
+      const btn = document.createElement('button');
+      btn.textContent = "Close";
+      btn.className = 'primary';
+      btn.addEventListener('click', () => {
+        popupOverlay.style.display = 'none';
+      });
+      popupButtons.appendChild(btn);
+    }
+
+    // Confetti animation
+    function initializeConfetti() {
+      const colors = ["#FFB6C1", "#FFC0CB", "#FF69B4", "#FF1493", "#DB7093"];
+      const numParticles = 60;
+      for (let i = 0; i < numParticles; i++) {
+        const particle = document.createElement("div");
+        particle.classList.add("confetti");
+        particle.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+        particle.style.left = Math.random() * 100 + "vw";
+        particle.style.animationDelay = Math.random() * 3 + "s";
+        const size = Math.random() * 8 + 6;
+        particle.style.width = size + "px";
+        particle.style.height = size + "px";
+        document.body.appendChild(particle);
+      }
+    }
+
+    // Close popup animation keyframes (added here dynamically)
+    const styleSheet = document.createElement("style");
+    styleSheet.type = "text/css";
+    styleSheet.innerText = `
+      @keyframes popupExit {
+        0% {
+          opacity: 1;
+          transform: scale(1);
+        }
+        70% {
+          opacity: 0.7;
+          transform: scale(1.1);
+        }
+        100% {
+          opacity: 0;
+          transform: scale(0);
+        }
+      }
+    `;
+    document.head.appendChild(styleSheet);
+
+    // Start the popup dialog sequence on page load
+    window.onload = () => {
+      renderStep(currentStep);
+    };
+  </script>
 </body>
 </html>
