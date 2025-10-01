@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>20th Birthday Wishlist For Her</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Great+Vibes&display=swap" rel="stylesheet" />
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: linear-gradient(135deg, #ffe4ec, #ffd6e8 90%);
+      font-family: 'Segoe UI', sans-serif;
+      color: #333;
+      text-align: center;
+      padding: 1rem;
+      font-size: 16px;
+      min-height: 100vh;
+      position: relative;
+    }
+    h1 {
+      font-size: 2.8em;
+      color: #d14b72;
+      margin-bottom: 2.1rem;
+      text-shadow: 2px 2px 6px rgba(225, 192, 203, 0.6);
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 600;
+      letter-spacing: 1.1px;
+    }
+    .subtitle {
+      color: #b392ac;
+      font-size: 1.11rem;
+      margin-bottom: 1.6rem;
+      font-family: 'Great Vibes', cursive, 'Montserrat', sans-serif;
+      text-shadow: 1px 1px 6px #ffe1ec55;
+      font-weight: 400;
+      letter-spacing: 0.4px;
+    }
+    .wishlist {
+      list-style: none;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+      padding: 0;
+    }
+    .wishlist li {
+      background: #fff;
+      border: 2px solid #ff9fba;
+      box-shadow: 0 6px 12px rgba(0,0,0,0.08);
+      padding: 1rem 0.5rem;
+      position: relative;
+      transition: transform 0.33s ease, box-shadow 0.29s ease;
+      border-radius: 20px;
+      min-height: 220px;
+    }
+    .wishlist li:hover {
+      transform: translateY(-10px) scale(1.045);
+      box-shadow: 0 14px 40px rgba(255, 159, 186, 0.33);
+      z-index: 3;
+    }
+    .wishlist img {
+      width: 110px;
+      height: 110px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 0.7rem;
+      border: 3px solid #ff9fba;
+      box-shadow: 0 2px 12px #ffd6e890;
+    }
+    .wishlist span {
+      display: block;
+      font-size: 1.1rem;
+      color: #444;
+      font-weight: 500;
+      margin-bottom: 10px;
+    }
+    .caption {
+      position: absolute;
+      left: 50%; transform: translateX(-50%);
+      top: 100px;
+      background: #ffd6e8;
+      border-radius: 14px;
+      font-size: .93rem;
+      color: #d14b72;
+      padding: 4px 12px;
+      box-shadow: 0 1px 6px #ffd6e850;
+      font-family: 'Montserrat',sans-serif;
+      pointer-events: none;
+      opacity: 0.77;
+      font-weight: 600;
+      z-index: 2;
+    }
+    .footer {
+      font-size: 1rem;
+      color: #888;
+      margin-top: 1rem;
+      margin-bottom: 2rem;
+      user-select: none;
+    }
+    @media (max-width: 700px) {
+      .wishlist { grid-template-columns: 1fr; gap: 1.3rem; }
+    }
+
+    /* Notebook checklist styles */
+    .notebook-container {
+      background: #fffdfa;
+      border: 2px dashed #ffd6e8;
+      border-radius: 16px;
+      padding: 1.5rem 1.2rem 1.2rem 1.8rem;
+      margin: 2.5rem auto 2rem auto;
+      max-width: 410px;
+      box-shadow: 0 8px 32px #ffd6e83a;
+      text-align: left;
+      position: relative;
+    }
+    .notebook-title {
+      font-family: 'Great Vibes', cursive, 'Montserrat', sans-serif;
+      color: #d14b72;
+      font-size: 1.7rem;
+      margin-bottom: 1.2rem;
+      letter-spacing: 1px;
+      text-shadow: 1px 2px 6px #ffe1ec55;
+      text-align: left;
+      margin-left: 0.5rem;
+    }
+    .notebook-checklist {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    .notebook-checklist li {
+      margin-bottom: 0.9rem;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.09rem;
+      display: flex;
+      align-items: center;
+    }
+    .notebook-checklist input[type="checkbox"] {
+      accent-color: #ff69b4;
+      width: 1.2em;
+      height: 1.2em;
+      margin-right: 1em;
+      border-radius: 4px;
+      border: 2px solid #ffd6e8;
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+    .notebook-checklist input[type="checkbox"]:hover {
+      transform: scale(1.13);
+      box-shadow: 0 0 4px #ffd6e8;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>20th Birthday Wishlist For Her</h1>
+  <div class="subtitle">Dreamy birthday moodboard · Pinterest girly energy · All my faves!</div>
+
+  <!-- Wishlist with images -->
+  <ul class="wishlist">
+    <li>
+      <img src="Birthday Cake.jfif" alt="Cake" />
+      <span>Personalized Vanilla Cake</span>
+    </li>
+    <li>
+      <img src="20th Birthday Decorations.jfif" alt="Balloons" />
+      <span>Rose Gold Balloons</span>
+    </li>
+    <li>
+      <img src="nails.jfif" alt="Nails" />
+      <span>Manicure & Pedicure</span>
+    </li>
+    <li><img src="flowers.jfif" alt="Flowers"/><span>White Roses</span></li>
+      <li><img src="water park.jfif" alt="Adventure"/><span>Water Park</span></li>
+      <li><img src="Perfume.jfif" alt="Perfume"/><span>Lattafa Perfume</span></li>
+      <li><img src="van cleef pearly white jewlery set.jfif" alt="jewlery"/><span>Jewellery</span></li>
+      <li><img src="Short boho braids.jfif" alt="Hair"/><span>Goddess Braids</span></li>
+      <li><img src="tote bag.jfif" alt="Bag"/><span>Hand Bag</span></li>
+      <li><img src="lashes.jfif" alt="Lashes"/><span>Classic Lashes</span></li>
+      <li><img src="Love Dinner.jfif" alt="Time"/><span>Quality Time With You</span></li>
+      <li><img src="girl dinner.jfif" alt="Time"/><span>Dinner With My Girls</span></li>
+      <li><img src="teddy.jfif" alt="Teddy"/><span>My Waffles</span></li>
+  </ul>
+    <!-- Add more list items as needed -->
+  </ul>
+
+  <p class="footer">A curated list to make her 20th birthday unforgettable!</p>
+
+  <!-- Notebook-style checklist -->
+  <div class="notebook-container">
+    <h2 class="notebook-title">Notebook Checklist 📝</h2>
+    <ul class="notebook-checklist">
+      <li><label><input type="checkbox" value="vanillaCake" /> Personalized Vanilla Cake</label></li>
+      <li><label><input type="checkbox" value="roseGoldBalloons" /> Rose Gold Balloons</label></li>
+      <li><label><input type="checkbox" value="manicurePedicure" /> Manicure & Pedicure</label></li>
+      <li><label><input type="checkbox" value="whiteRoses" /> White Roses</label></li>
+      <li><label><input type="checkbox" value="waterPark" /> Water Park</label></li>
+      <li><label><input type="checkbox" value="lattafaPerfume" /> Lattafa Perfume</label></li>
+      <li><label><input type="checkbox" value="jewellery" /> Jewellery</label></li>
+      <li><label><input type="checkbox" value="goddessBraids" /> Goddess Braids</label></li>
+      <li><label><input type="checkbox" value="handBag" /> Hand Bag</label></li>
+      <li><label><input type="checkbox" value="classicLashes" /> Classic Lashes</label></li>
+      <li><label><input type="checkbox" value="qualityTime" /> Quality Time With You</label></li>
+      <li><label><input type="checkbox" value="dinnerWithGirls" /> Dinner With My Girls</label></li>
+      <li><label><input type="checkbox" value="myWaffles" /> My Waffles</label></li>
+    </ul>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const checkboxes = document.querySelectorAll('.notebook-checklist input[type="checkbox"]');
+      
+      // Load saved checked states from localStorage
+      const saved = JSON.parse(localStorage.getItem('wishlistChecked')) || [];
+      checkboxes.forEach(checkbox => {
+        if (saved.includes(checkbox.value)) {
+          checkbox.checked = true;
+        }
+      });
+
+      // When a checkbox changes, save the new states
+      checkboxes.forEach(checkbox => {
+        checkbox.addEventListener('change', () => {
+          const checkedBoxes = [];
+          checkboxes.forEach(box => {
+            if (box.checked) {
+              checkedBoxes.push(box.value);
+            }
+          });
+          localStorage.setItem('wishlistChecked', JSON.stringify(checkedBoxes));
+        });
+      });
+    });
+  </script>
+
+</body>
+</html>
